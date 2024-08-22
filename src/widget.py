@@ -5,10 +5,11 @@ def mask_account_card(my_string: str) -> str:
     """Функция маскировки карты и счета"""
     numb = my_string.split()
     if numb[0] == "Счет":
-        return get_mask_account(numb[-1])
+        mask_account = get_mask_account(numb[-1])
+        return f"{" ".join(numb[:-1])} {mask_account}"
     else:
         card_number = get_mask_card_number(numb[-1])
-        return f"{" ".join(numb[:-1])}  {card_number}"
+        return f"{" ".join(numb[:-1])} {card_number}"
 
 
 print(mask_account_card("Maestro 1596837868705199"))

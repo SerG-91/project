@@ -21,3 +21,4 @@ def get_mask_account(card: str) -> str:
 
 number_account = input("Введите номер счета:")
 print(get_mask_account(number_account))
+

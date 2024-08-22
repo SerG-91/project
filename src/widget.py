@@ -4,7 +4,7 @@ from src.hw9_1 import get_mask_account, get_mask_card_number
 def mask_account_card(my_string: str) -> str:
     """Функция маскировки карты и счета"""
     numb = my_string.split()
-    if numb[0] == "Счет":
+    if "Счет" in numb:
         mask_account = get_mask_account(numb[-1])
         return f"{" ".join(numb[:-1])} {mask_account}"
     else:
